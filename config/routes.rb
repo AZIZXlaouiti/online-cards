@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-   root 'home_page#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # root "main#index"
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'pages#index'
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
