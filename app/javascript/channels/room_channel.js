@@ -1,8 +1,10 @@
 import consumer from "./consumer"
-
+const $ = require("jquery")
 consumer.subscriptions.create("RoomChannel", {
   connected() {
      console.log("connect...")
+     $('#status').html("Waiting for an other player")
+     
     // Called when the subscription is ready for use on the server
   },
 
@@ -11,6 +13,7 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
+    console.log(data)
     // Called when there's incoming data on the websocket for this channel
   }
 });
