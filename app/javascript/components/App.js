@@ -54,9 +54,7 @@ const App = () => {
           <div className="card turned top-card">
             <div className="bckg"></div>
           </div>
-          <div className="card turned pile">
-            <div className="bckg"></div>
-          </div>
+          
         </div>
         
       </div>

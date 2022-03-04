@@ -401,6 +401,18 @@ body {
     position: absolute;
     left: 5em;
     top: 5em;
+    position: absolute;
+    left: -26em;
+    bottom: -18vh;
+    width: 127px;
+    height: 197px;
+    background: url(https://scuffeduno.online/img/spritesheet.3d854481.jpg) no-repeat;
+    background-size: 1317%;
+    border-radius: 14px;
+    // box-shadow: 0 0 15px 0 rgb(0 0 0 / 45%);
+    transition: transform .3s ease,margin-left .4s ease,box-shadow .2s ease,width .2s ease,filter .2s ease;
+    width: 127px;
+    transform: rotate(-30deg) rotateY(20deg) rotateX(20deg) scale(.85)!important;
     .card {
       &.pile {
         box-shadow: 0px 2px #fff, 0px 4px rgba(0,0,0,0.16), 0px 6px #fff, 0px 8px rgba(0,0,0,0.16), 0px 10px #fff, 0px 12px rgba(0,0,0,0.16), 0px 14px #fff, 0px 16px rgba(0,0,0,0.16), 0px 18px #fff, 0px 20px rgba(0,0,0,0.16);
@@ -509,6 +521,6 @@ body {
       }
     }
   }
-  
+ 
 
-  // box-shadow: 0px 2px #fff, 0px 4px rgb(0 0 0 / 16%), 0px 6px #fff, 0px 8px rgb(0 0 0 / 16%), 0px 10px #fff, 0px 12px rgb(0 0 0 / 16%), 0px 14px #fff;
+
