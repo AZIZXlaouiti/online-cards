@@ -1,9 +1,17 @@
+html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle,#c0221a 0,#921913 60%,#6d100b 100%);
+}
 body {
     text-align:center;
     color:#000;
     padding:0;
     margin:0;
-    background-color:#d6dbe2;
+    background: url(https://static.worldofcardgames.com/wallpaper/fabrics/green-felt.jpg/v/217)
   }
   
   #game {
@@ -150,3 +158,357 @@ body {
   body.theme #menu-container { background:#ff8b92 }
   body.theme td.O            { color:#AED272 }
   body.theme td.X            { color:#ff8b92 }
+
+
+ 
+  .card p {
+    text-align: center;
+    font: 100px/220px Georgia, serif;
+  }
+  
+  .suitdiamonds:before, .suitdiamonds:after {
+    content: "♦";
+    color: #ff0000;
+  }
+  
+  .suithearts:before, .suithearts:after {
+    content: "♥";
+    color: #ff0000;
+  }
+  
+  .suitclubs:before, .suitclubs:after {
+    content: "♣";
+    color: #000;
+  }
+  
+  .suitspades:before, .suitspades:after {
+    content: "♠";
+    color: #000;
+  }
+  
+  div[class*='suit']:before {
+    position: absolute;
+    font-size: 35px;
+    left: 5px;
+    top: 5px;
+  }
+  
+  div[class*='suit']:after {
+    position: absolute;
+    font-size: 35px;
+    right: 5px;
+    bottom: 5px;
+  }
+  
+  .card:hover {
+    cursor: pointer;
+  }
+  
+  
+  /*SPREAD*/
+  .spread {
+    width: 350px;
+    height: 250px;
+    position: relative;
+  }
+  
+  .spread > .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: top 0.3s ease, left 0.3s ease;
+    -moz-transition: top 0.3s ease, left 0.3s ease;
+    -o-transition: top 0.3s ease, left 0.3s ease;
+    -ms-transition: top 0.3s ease, left 0.3s ease;
+    transition: top 0.3s ease, left 0.3s ease;
+  }
+  
+  .spread:hover .suitdiamonds {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  
+  .spread:hover .suithearts {
+    left: 30px;
+    top: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  
+  .spread:hover .suitclubs {
+    left: 60px;
+    top: 5px;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  
+  .spread:hover .suitspades{
+    left: 80px;
+    top: 10px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+  
+  .spread > .card:hover {
+    -webkit-box-shadow: 1px 1px 7px rgba(0,0,0,0.4);
+    box-shadow: 1px 1px 7px rgba(0,0,0,0.4);
+  }
+  
+  /*GROW*/
+  .grow > .card {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  .grow > .card:hover {
+    -webkit-box-shadow: 1px 1px 7px rgba(0,0,0,0.9);
+    box-shadow: 1px 1px 7px rgba(0,0,0,0.9);
+    -webkit-transform: scale(1.05,1.05);
+    -moz-transform: scale(1.05,1.05);
+    -o-transform: scale(1.05,1.05);
+    -ms-transform: scale(1.05,1.05);
+    transform: scale(1.05,1.05);
+  }
+  .card {
+    display: inline-block;
+    transition: 200ms;
+    float: left;
+    margin-right: 10px;
+    .bckg {
+      // phone==> w : 5em
+      // phone==> h : 7.678500000000001em
+      width: 8em; 
+      height: 12.4em; 
+      border-radius: 0.5em;
+      overflow: hidden;
+      position: relative;
+      &::before {
+        content: '';
+        width: inherit;
+        height: inherit;
+        // background-color: #3230308a;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        transform-origin: center center;
+      }
+    }
+    .center-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+    }
+    &.red {
+      color: #dc251c;
+      .bckg {
+        background-color: #dc251c;
+      }
+    }
+    &.yellow {
+      color: #fcf604;
+      .bckg {
+        background-color: #fcf604;
+      }
+    }
+    &.blue {
+      color: #0493de;
+      .bckg {
+        background-color: #0493de;
+      }
+    }
+    &.green {
+      color: #018d41;
+      .bckg {
+        background: url(https://static.worldofcardgames.com/pieces/card/anglo/32/9d.png/v/217);
+      }
+    }
+    &.black {
+      color: #1f1b18;
+      .bckg {
+        background: url(https://cosmicrealms.com/images/1s.png);
+      }
+    }
+    &.turned {
+      &:hover {
+        cursor: default;
+      }
+      .bckg {
+        background-color: #1f1b18;
+        &::before {
+          background-color: #dc251c;
+          background: url(https://user-images.githubusercontent.com/79036942/156501785-17a0266a-d489-4dde-a890-d740fef80a15.PNG);
+        }
+      }
+    }
+  }
+  .game-field {
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 0.5em;
+    grid-template-columns: 12em 24em 12em;
+    grid-template-rows: 12em 24em 12em;
+    #piles_area {
+      position: relative;
+      border-radius: 4em;
+      transition: 200ms;
+      
+    }
+    &.yellow {
+      #piles_area {
+        background-color: rgba(252,246,4,0.4);
+      }
+    }
+    &.blue {
+      #piles_area {
+        background-color: rgba(4,147,222,0.4);
+      }
+    }
+    &.red {
+      #piles_area {
+        // background: url(https://static.worldofcardgames.com/wallpaper/fabrics/green-felt.jpg/v/217);
+      }
+    }
+    &.green {
+      #piles_area {
+        background-color: rgba(1,141,65,0.4);
+      }
+    }
+    &.perspective {
+      // transform: rotateX(30deg);
+    }
+  }
+  #draw_pile {
+    position: absolute;
+    left: 5em;
+    top: 5em;
+    .card {
+      &.pile {
+        box-shadow: 0px 2px #fff, 0px 4px rgba(0,0,0,0.16), 0px 6px #fff, 0px 8px rgba(0,0,0,0.16), 0px 10px #fff, 0px 12px rgba(0,0,0,0.16), 0px 14px #fff, 0px 16px rgba(0,0,0,0.16), 0px 18px #fff, 0px 20px rgba(0,0,0,0.16);
+        &:hover {
+          transform: none;
+        }
+      }
+      &.top-card {
+        z-index: 100;
+        box-shadow: none;
+        &:hover {
+          box-shadow: 0px 4px rgba(0,0,0,0.16);
+          cursor: pointer;
+          transform: translateY(1em);
+        }
+      }
+    }
+  }
+  #draw_pile .card.top-card,
+  #draw_pile .card.pile {
+    position: absolute;
+  }
+  #discard_pile {
+    position: absolute;
+    left: 12em;
+    top: 5.7em;
+    .card {
+      &.pile {
+        box-shadow: 0px 2px #fff, 0px 4px rgba(0,0,0,0.16), 0px 6px #fff, 0px 8px rgba(0,0,0,0.16);
+        &:hover {
+          transform: none;
+        }
+      }
+      &.top-card {
+        z-index: 100;
+        box-shadow: none;
+      }
+    }
+  }
+  #discard_pile .card.top-card,
+  #discard_pile .card.pile {
+    position: absolute;
+  }
+  #piles_area {
+    grid-area: 2/2;
+  }
+  #player {
+    grid-area: 3/2;
+    .player_hand {
+      .card {
+        cursor: pointer;
+        &:hover {
+          transform-origin: left bottom;
+          transform: rotate(-10deg) translateY(-0.5em);
+          & ~ .card {
+            transform: translateX(2em);
+          }
+        }
+      }
+    }
+  }
+  #player_left {
+    grid-area: 2/1;
+    .player_hand {
+      transform-origin: left bottom;
+      transform: rotate(90deg) translateY(-10em);
+    }
+  }
+  #player_top {
+    grid-area: 1/2;
+    .player_hand {
+      transform: translateY(1em);
+    }
+  }
+  #player_right {
+    grid-area: 2/3;
+    .player_hand {
+      transform-origin: left bottom;
+      transform: rotate(-90deg) translate(-24em, 1em);
+    }
+  }
+  .player_hand {
+    position: relative;
+    .card {
+      position: absolute;
+      &:nth-child(1) {
+        left: 2.2em;
+      }
+      &:nth-child(2) {
+        left: 4.4em;
+      }
+      &:nth-child(3) {
+        left: 6.600000000000001em;
+      }
+      &:nth-child(4) {
+        left: 8.8em;
+      }
+      &:nth-child(5) {
+        left: 11em;
+      }
+      &:nth-child(6) {
+        left: 13.200000000000001em;
+      }
+      &:nth-child(7) {
+        left: 15.400000000000002em;
+      }
+    }
+  }
+  
+
+  // box-shadow: 0px 2px #fff, 0px 4px rgb(0 0 0 / 16%), 0px 6px #fff, 0px 8px rgb(0 0 0 / 16%), 0px 10px #fff, 0px 12px rgb(0 0 0 / 16%), 0px 14px #fff;

@@ -1,7 +1,9 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
     stream_from "room_channel"
-    ActionCable.server.broadcast "room_channel", {action: "game_start", msg: "cross"}
+    # Match.create()
+    REDIS.set("a", 1)
+    ActionCable.server.broadcast "room_channel", {action: "game_start", msg: "cross" , cache: REDIS.get("a")}
   end
 
   def unsubscribed
