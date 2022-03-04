@@ -3,7 +3,7 @@ const $ = require("jquery")
 consumer.subscriptions.create("RoomChannel", {
   connected() {
      console.log("connect...")
-     $('#status').html("Waiting for an other player")
+     $('#status').html("Waiting for another player")
      
     // Called when the subscription is ready for use on the server
   },

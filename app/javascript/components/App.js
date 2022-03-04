@@ -3,7 +3,9 @@ const App = () => {
   return (
       <div className="game-field perspective red">
 
-        <div id="player">(You)
+        <div id="player">
+          
+          <div id="tag">(You)</div>
 
 
 
@@ -51,11 +53,12 @@ const App = () => {
       </div>
       <div id="piles_area">
         <div id="draw_pile">
-          <div className="card turned top-card">
+          {/* <div className="card turned top-card">
             <div className="bckg"></div>
-          </div>
+          </div> */}
           
         </div>
+        <div className="loading"></div>
         
       </div>
       </div>
