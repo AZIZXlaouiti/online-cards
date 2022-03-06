@@ -296,7 +296,7 @@ body {
     margin-right: 10px;
     z-index: 3;
     opacity: 1;
-    filter: brightness(0.5);
+    // filter: brightness(0.5);
     .bckg {
       // phone==> w : 5em
       // phone==> h : 7.678500000000001em
@@ -355,9 +355,9 @@ body {
       }
     }
     &.turned {
-      &:hover {
-        cursor: default;
-      }
+        transition: transform 0.2s ease 0s, filter 0.5s ease 0s;
+        transform: scale(0.5);
+      
       .bckg {
         background-color: #1f1b18;
         &::before {
