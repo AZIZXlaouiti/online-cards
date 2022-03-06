@@ -4,14 +4,17 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle,#c0221a 0,#921913 60%,#6d100b 100%);
+    // background: radial-gradient(circle,#c0221a 0,#921913 60%,#6d100b 100%);
 }
 body {
     text-align:center;
     color:#000;
     padding:0;
     margin:0;
-    background: url(https://static.worldofcardgames.com/wallpaper/fabrics/green-felt.jpg/v/217)
+    // background-color: #2f5e0e;
+    background-color: #005000;
+    background-image: url(https://www.transparenttextures.com/patterns/pool-table.png);
+    // background: url(https://static.worldofcardgames.com/wallpaper/fabrics/green-felt.jpg/v/217)
   }
   
   #game {
@@ -284,11 +287,16 @@ body {
     -ms-transform: scale(1.05,1.05);
     transform: scale(1.05,1.05);
   }
+
+ 
   .card {
     display: inline-block;
     transition: 200ms;
     float: left;
     margin-right: 10px;
+    z-index: 3;
+    opacity: 1;
+    filter: brightness(0.5);
     .bckg {
       // phone==> w : 5em
       // phone==> h : 7.678500000000001em
@@ -367,11 +375,14 @@ body {
     grid-gap: 0.5em;
     grid-template-columns: 12em 24em 12em;
     grid-template-rows: 12em 24em 12em;
+    box-shadow: 0 0 2px 1px #ffe23f, inset 0 0 2px 2px #ffe448;
     #piles_area {
       position: relative;
       border-radius: 4em;
       transition: 200ms;
-      
+      // box-shadow: 0 0 6px 4px #ffe23f, inset 0 0 3px 3px #ffe448;
+      // box-shadow: 0 0 2px 1px #ffe23f, inset 0 0 2px 2px #ffe448;
+      // transition: transform .3s ease,margin-left .4s ease,box-shadow .2s ease,width .2s ease,filter .2s ease;
     }
     &.yellow {
       #piles_area {
@@ -398,19 +409,10 @@ body {
     }
   }
   #draw_pile {
-    top: 5em;
     position: absolute;
-    left: -26em;
-    bottom: -18vh;
-    height: 197px;
-    background: url(https://scuffeduno.online/img/spritesheet.3d854481.jpg) no-repeat;
-    background-size: 1317%;
-    border-radius: 14px;
-    transition: transform .3s ease,margin-left .4s ease,box-shadow .2s ease,width .2s ease,filter .2s ease;
-    width: 127px;
-    transform: rotate(-30deg) rotateY(20deg) rotateX(20deg) scale(0.85) !important;
-    box-shadow: 0 0 8px 7px #fcc81c;
-    box-shadow: 0 0 2px 1px #ffe23f, inset 0 0 2px 2px #ffe448;
+    left: 60px;
+    bottom: 29vh;
+    cursor: pointer;
     .card {
       &.pile {
         box-shadow: 0px 2px #fff, 0px 4px rgba(0,0,0,0.16), 0px 6px #fff, 0px 8px rgba(0,0,0,0.16), 0px 10px #fff, 0px 12px rgba(0,0,0,0.16), 0px 14px #fff, 0px 16px rgba(0,0,0,0.16), 0px 18px #fff, 0px 20px rgba(0,0,0,0.16);
@@ -429,7 +431,25 @@ body {
       }
     }
   }
-  #draw_pile .card.top-card,
+  
+
+  
+  .stack{
+    top: 16em;
+    position: absolute;
+    left: -34e+m;
+    height: 197px;
+    background: url(https://scuffeduno.online/img/spritesheet.3d854481.jpg) no-repeat;
+    background-size: 1317%;
+    border-radius: 14px;
+    width: 127px;
+    transform: rotate(-30deg) rotateY(20deg) rotateX(20deg) scale(0.85) !important;
+    background-position: -644.25px -994.25px;transform: rotate(0deg);
+    box-shadow: 0 0 15px 0 #00000073;
+    // box-shadow: 0 0 2px 1px #ffe23f, inset 0 0 2px 2px #ffe448;
+    transition: transform .3s ease,margin-left .4s ease,box-shadow .2s ease,width .2s ease,filter .2s ease;
+  }
+   #draw_pile .card.top-card,
   #draw_pile .card.pile {
     position: absolute;
   }
@@ -460,11 +480,15 @@ body {
   #player {
     grid-area: 3/2;
     .player_hand {
+      &:hover{
+        // transition: transform .2s ease,filter .5s ease;
+        // transform: scale(0.8);
+      }
       .card {
         cursor: pointer;
         &:hover {
-          transform-origin: left bottom;
-          transform: rotate(-10deg) translateY(-0.5em);
+          // transform-origin: left bottom;
+          // transform: rotate(-10deg) translateY(-0.5em);
           & ~ .card {
             transform: translateX(2em);
           }
@@ -521,4 +545,46 @@ body {
   }
  
 
+
+
+
+.direction.reverse:after{
+    top:36px;
+    left:8px;
+    transform:rotate(-133deg)
+}
+.direction.reverse:before{
+    bottom:36px;
+    right:8px;
+    left:auto;
+    transform:rotate(44deg)
+}
+.direction:after,.direction:before{
+    position:absolute;
+    content:"";
+    width:0;
+    height:0;
+    border:20px solid transparent;
+    border-bottom-color:hsla(0,0%,100%,.3137254901960784)
+}
+.direction:after{
+    top:36px;
+    right:8px;
+    transform:rotate(135deg)
+}
+.direction:before{
+    bottom:36px;
+    left:8px;
+    transform:rotate(-45deg);
+}
+@-webkit-keyframes rotate{
+    to{
+        transform:scale(1.2) rotateX(58deg) rotate(1turn)
+    }
+}
+@keyframes rotate{
+    to{
+        transform:scale(1.2) rotateX(58deg) rotate(1turn);
+    }
+}
 
